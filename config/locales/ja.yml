@@ -181,3 +181,15 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+
+  title: "タイトル"
+  memo: "メモ"
+  author: "著者"
+  picture: "画像"
+  books: "本の一覧"
+  show this book: "この本を表示"
+  back to books: "本の一覧に戻る"
+  edit this book: "この本を編集する"
+  destroy this book:  "この本を削除する"
+  editing: "本の編集"
+  new book: "新しい本"

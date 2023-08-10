@@ -6,6 +6,7 @@ class BooksController < ApplicationController
   # GET /books or /books.json
   def index
     @books = Book.all
+    I18n.translate 'title'
   end
 
   # GET /books/1 or /books/1.json
@@ -68,4 +69,5 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :memo, :author, :picture)
   end
+
 end

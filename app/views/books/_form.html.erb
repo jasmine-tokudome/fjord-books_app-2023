@@ -12,22 +12,23 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
+    <%= form.label I18n.translate 'title', style: "display: block" %>
+    <%#= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
   <div>
-    <%= form.label :memo, style: "display: block" %>
+    <%= form.label I18n.translate 'memo', style: "display: block" %>
     <%= form.text_area :memo %>
   </div>
 
   <div>
-    <%= form.label :author, style: "display: block" %>
+    <%= form.label I18n.translate 'author', style: "display: block" %>
     <%= form.text_field :author %>
   </div>
 
   <div>
-    <%= form.label :picture, style: "display: block" %>
+    <%= form.label I18n.translate 'picture', style: "display: block" %>
     <%= form.file_field :picture %>
   </div>
 

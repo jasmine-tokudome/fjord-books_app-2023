@@ -4,4 +4,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  #
+  Rails.application.routes.draw do
+    root to: "books#index"
+  end
+
+  # scope "/:locale" do
+  #   resources :books
+  # end
+
 end
