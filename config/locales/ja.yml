@@ -191,9 +191,16 @@ ja:
   back_to_books: "本の一覧に戻る"
   edit_this_book: "この本を編集"
   destroy_this_book:  "この本を削除"
-  editing: "本の編集"
   new_book: "新しい本"
   successfully_created: "本を登録できました。"
   successfully_updated: "本の更新ができました。"
   successfully_destroyed: "本の削除ができました。"
-  
+
+  views:
+    edit:
+      editing: "本の編集"
+
+  shared:
+    _form:
+      label:
+        style: "display: block"
