@@ -40,9 +40,6 @@ en:
   edit_this_book: "Edit this book"
   destroy_this_book:  "Destroy this book"
   new_book: "New book"
-  successfully_created: "Book was successfully created."
-  successfully_updated: "Book was successfully updated."
-  successfully_destroyed: "Book was successfully destroyed."
 
   views:
     edit:
@@ -52,3 +49,10 @@ en:
     _form:
       label:
         style: "display: block"
+
+  controllers:
+    books:
+      create:
+        successfully_created: "Book was successfully created."
+        successfully_updated: "Book was successfully updated."
+        successfully_destroyed: "Book was successfully destroyed."
