@@ -1,22 +1,22 @@
 <div id="<%= dom_id book %>">
 
   <p>
-    <strong><%= I18n.translate 'title' %>:</strong>
+    <strong><%= I18n.t :title %>:</strong>
     <%= book.title %>
   </p>
 
   <p>
-    <strong><%= I18n.translate 'memo' %>:</strong>
+    <strong><%= I18n.t :memo %>:</strong>
     <%= book.memo %>
   </p>
 
   <p>
-    <strong><%= I18n.translate 'author' %>:</strong>
+    <strong><%= I18n.t :author %>:</strong>
     <%= book.author %>
   </p>
 
   <p>
-    <strong><%= I18n.translate 'picture' %>:</strong>
+    <strong><%= I18n.t :picture %>:</strong>
     <%= image_tag(book.picture_url) if book.picture.present? %>
   </p>
 

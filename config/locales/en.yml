@@ -41,3 +41,6 @@ en:
   destroy_this_book:  "Destroy this book"
   editing: "Editing book"
   new_book: "New book"
+  successfully_created: "Book was successfully created."
+  successfully_updated: "Book was successfully updated."
+  successfully_destroyed: "Book was successfully destroyed."

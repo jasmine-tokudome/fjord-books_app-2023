@@ -1,18 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<h1><%= I18n.translate 'books' %></h1>
+<h1><%= I18n.t :books %></h1>
 
 <div id="books" class="index-items">
   <% @books.each do |book| %>
         <div class="index-item">
         <%= render book %>
         <p>
-            <%= link_to t('show_this_book'), book %>
+            <%= link_to I18n.t(:show_this_book), book %>
         </p>
         </div>
   <% end %>
 </div>
 
 <nav class="page-nav">
-    <%= link_to t('new_book'), new_book_path %>
+    <%= link_to I18n.t(:new_book), new_book_path %>
 </nav>

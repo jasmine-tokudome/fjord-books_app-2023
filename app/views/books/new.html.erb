@@ -1,9 +1,9 @@
-<h1><%= t('new_book') %></h1>
+<h1><%= I18n.t(:new_book) %></h1>
 
 <%= render "form", book: @book %>
 
 <br>
 
 <nav class="page-nav">
-  <%= link_to t('back_to_books'), books_path %>
+  <%= link_to I18n.t(:back_to_books), books_path %>
 </nav>
