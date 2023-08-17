@@ -49,11 +49,11 @@ en:
     edit:
       editing: "Editing book"
     create:
-      successfully_created: "Book was successfully created."
+      success: "Book was successfully created."
     update:
-      successfully_updated: "Book was successfully updated."
+      success: "Book was successfully updated."
     destroy:
-      successfully_destroyed: "Book was successfully destroyed."
+      success: "Book was successfully destroyed."
 
   activerecord:
     models:

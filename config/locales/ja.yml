@@ -203,8 +203,8 @@ ja:
     edit:
       editing: "本の編集"
     create:
-      successfully_created: "本を登録できました。"
+      success: "本を登録できました。"
     update:
-      successfully_updated: "本の更新ができました。"
+      success: "本の更新ができました。"
     destroy:
-      successfully_destroyed: "本の削除ができました。"
+      success: "本の削除ができました。"
