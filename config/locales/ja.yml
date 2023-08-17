@@ -7,6 +7,8 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    models:
+      book: "本の一覧"
   date:
     abbr_day_names:
     - 日
@@ -192,22 +194,17 @@ ja:
   destroy_this_book:  "この本を削除"
   new_book: "新しい本"
 
-  books:
-    edit:
-      editing: "本の編集"
-
   shared:
     form:
       label:
         style: "display: block"
 
-  controllers:
-    books:
-      create:
-        successfully_created: "本を登録できました。"
-        successfully_updated: "本の更新ができました。"
-        successfully_destroyed: "本の削除ができました。"
-
-  activerecord:
-    models:
-      book: "本の一覧"
+  books:
+    edit:
+      editing: "本の編集"
+    create:
+      successfully_created: "本を登録できました。"
+    update:
+      successfully_updated: "本の更新ができました。"
+    destroy:
+      successfully_destroyed: "本の削除ができました。"

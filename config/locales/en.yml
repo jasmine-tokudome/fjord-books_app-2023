@@ -40,21 +40,20 @@ en:
   destroy_this_book:  "Destroy this book"
   new_book: "New book"
 
-  books:
-    edit:
-      editing: "Editing book"
-
   shared:
     form:
       label:
         style: "display: block"
 
-  controllers:
-    books:
-      create:
-        successfully_created: "Book was successfully created."
-        successfully_updated: "Book was successfully updated."
-        successfully_destroyed: "Book was successfully destroyed."
+  books:
+    edit:
+      editing: "Editing book"
+    create:
+      successfully_created: "Book was successfully created."
+    update:
+      successfully_updated: "Book was successfully updated."
+    destroy:
+      successfully_destroyed: "Book was successfully destroyed."
 
   activerecord:
     models:
