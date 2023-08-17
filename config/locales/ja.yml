@@ -198,7 +198,7 @@ ja:
       editing: "本の編集"
 
   shared:
-    _form:
+    form:
       label:
         style: "display: block"
 

@@ -4,12 +4,12 @@
 
 <div id="books" class="index-items">
   <% @books.each do |book| %>
-        <div class="index-item">
-        <%= render book %>
+    <div class="index-item">
+      <%= render book %>
         <p>
-            <%= link_to I18n.t(:show_this_book), book %>
+          <%= link_to I18n.t(:show_this_book), book %>
         </p>
-        </div>
+    </div>
   <% end %>
 </div>
 

@@ -46,7 +46,7 @@ en:
       editing: "Editing book"
 
   shared:
-    _form:
+    form:
       label:
         style: "display: block"
 
