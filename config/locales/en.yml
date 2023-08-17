@@ -34,7 +34,6 @@ en:
   memo: "Memo"
   author: "Author"
   picture: "Picture"
-  book_list: "Books"
   show_this_book: "Show this book"
   back_to_books: "Back to books"
   edit_this_book: "Edit this book"
@@ -56,3 +55,7 @@ en:
         successfully_created: "Book was successfully created."
         successfully_updated: "Book was successfully updated."
         successfully_destroyed: "Book was successfully destroyed."
+
+  activerecord:
+    models:
+      book: "Books"

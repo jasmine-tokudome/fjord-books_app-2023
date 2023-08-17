@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1><%= I18n.t :book_list %></h1>
+<h1><%= Book.model_name.human %></h1>
 
 <div id="books" class="index-items">
   <% @books.each do |book| %>
