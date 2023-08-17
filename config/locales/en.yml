@@ -34,14 +34,14 @@ en:
   memo: "Memo"
   author: "Author"
   picture: "Picture"
-  books: "Books"
+  book_list: "Books"
   show_this_book: "Show this book"
   back_to_books: "Back to books"
   edit_this_book: "Edit this book"
   destroy_this_book:  "Destroy this book"
   new_book: "New book"
 
-  views:
+  books:
     edit:
       editing: "Editing book"
 

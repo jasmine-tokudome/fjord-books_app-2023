@@ -186,14 +186,14 @@ ja:
   memo: "メモ"
   author: "著者"
   picture: "画像"
-  books: "本の一覧"
+  book_list: "本の一覧"
   show_this_book: "この本を表示"
   back_to_books: "本の一覧に戻る"
   edit_this_book: "この本を編集"
   destroy_this_book:  "この本を削除"
   new_book: "新しい本"
 
-  views:
+  books:
     edit:
       editing: "本の編集"
 
