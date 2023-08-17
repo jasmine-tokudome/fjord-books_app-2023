@@ -73,6 +73,7 @@ group :development do
   gem 'rubocop', '~> 1.45.1', require: false
   gem 'rubocop-fjord', require: false
   gem 'rubocop-rails', require: false
+  gem 'letter_opener_web', '~> 2.0'
 end
 
 group :test do
