@@ -50,6 +50,8 @@ en:
       success: "Book was successfully updated."
     destroy:
       success: "Book was successfully destroyed."
+    new:
+      new_book: "New book"
 
   activerecord:
     models:

@@ -210,3 +210,5 @@ ja:
       success: "本の更新ができました。"
     destroy:
       success: "本の削除ができました。"
+    new:
+      new_book: "新しい本"
