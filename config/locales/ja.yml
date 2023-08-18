@@ -9,6 +9,12 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       book: "本の一覧"
+    attributes:
+      book:
+        title: "タイトル"
+        memo: "メモ"
+        author: "著者"
+        picture: "画像"
   date:
     abbr_day_names:
     - 日
@@ -184,10 +190,6 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
 
-  title: "タイトル"
-  memo: "メモ"
-  author: "著者"
-  picture: "画像"
   show_this_book: "この本を表示"
   back_to_books: "本の一覧に戻る"
   edit_this_book: "この本を編集"

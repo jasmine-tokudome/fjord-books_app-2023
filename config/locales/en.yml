@@ -30,10 +30,6 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  title: "Title"
-  memo: "Memo"
-  author: "Author"
-  picture: "Picture"
   show_this_book: "Show this book"
   back_to_books: "Back to books"
   edit_this_book: "Edit this book"
@@ -58,3 +54,9 @@ en:
   activerecord:
     models:
       book: "Books"
+    attributes:
+      book:
+        title: "Title"
+        memo: "Memo"
+        author: "Author"
+        picture: "Picture"
