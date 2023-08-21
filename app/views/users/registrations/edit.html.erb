@@ -8,6 +8,21 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+  <div class="field">
+    <%= f.label :post_code %><br />
+    <%= f.email_field :post_code, autofocus: true, autocomplete: "post_code" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.email_field :address, autofocus: true, autocomplete: "address" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :self_introduction %><br />
+    <%= f.email_field :self_introduction, autofocus: true, autocomplete: "self_introduction" %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
