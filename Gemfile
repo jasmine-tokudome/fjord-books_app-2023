@@ -70,10 +70,10 @@ group :development do
   gem 'i18n_generators'
   # 以下のPRがリリースされたら最新のrubocopを使うようにする
   # https://github.com/fjordllc/rubocop-fjord/pull/16
+  gem 'letter_opener_web', '~> 2.0'
   gem 'rubocop', '~> 1.45.1', require: false
   gem 'rubocop-fjord', require: false
   gem 'rubocop-rails', require: false
-  gem 'letter_opener_web', '~> 2.0'
 end
 
 group :test do
@@ -83,6 +83,6 @@ group :test do
 end
 
 gem 'carrierwave'
-gem 'kaminari'
 gem 'devise'
 gem 'devise-i18n'
+gem 'kaminari'

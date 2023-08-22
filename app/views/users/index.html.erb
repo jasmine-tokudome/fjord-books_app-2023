@@ -1,14 +1,14 @@
 <% provide(:title, 'All users') %>
-<h1>All users</h1>
+<h1>ユーザー一覧</h1>
 
 <div class="users_index">
   <% @users.each do |user| %>
 <table>
     <tr><%= "ID: #{user.id}" %></tr>
-    <tr><%= "Email: #{user.email}" %></tr>
-    <tr><%= "Post code: #{user.post_code}" %></tr>
-    <tr><%= "Address: #{user.address}" %></tr>
-    <tr><%= "Self introduction: #{user.self_introduction}" %></tr>
+    <tr><%= "Eメール: #{user.email}" %></tr>
+    <tr><%= "郵便番号: #{user.post_code}" %></tr>
+    <tr><%= "住所: #{user.address}" %></tr>
+    <tr><%= "自己紹介: #{user.self_introduction}" %></tr>
 </table>
   <% end %>
 </div>
