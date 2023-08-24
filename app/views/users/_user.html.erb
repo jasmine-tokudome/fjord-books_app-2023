@@ -25,4 +25,9 @@
     <%= user.self_introduction %>
   </p>
 
+  <p>
+    <strong><%= User.human_attribute_name(:avatar) %>:</strong>
+    <%= image_tag user.avatar.variant(resize_to_limit: [300, 200]).processed if user.avatar.attached? %>
+  </p>
+
 </div>
