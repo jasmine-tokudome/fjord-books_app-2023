@@ -9,7 +9,11 @@ class BooksController < ApplicationController
   end
 
   # GET /books/1 or /books/1.json
-  def show; end
+  def show
+    @book = Book.find(params[:id])
+    @comment = Comment.new
+    @comments = @book.comments
+  end
 
   # GET /books/new
   def new
@@ -25,7 +29,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to book_url(@book), notice: t('controllers.common.notice_create', name: Book.model_name.human) }
+        format.html { redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human) }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -66,6 +70,7 @@ class BooksController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def book_params
-    params.require(:book).permit(:title, :memo, :author, :picture)
+    params.require(:book).permit(:title, :memo, :author, :picture,:comment)
   end
+
 end

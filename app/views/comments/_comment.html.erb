@@ -1,0 +1,15 @@
+ <strong><%= Comment.model_name.human %>:</strong>
+  <% if comments.any? %>
+    <ul>
+      <% comments.each do |comment| %>
+        <% if comment.persisted? %>
+          <li>
+            <%= comment.commenter %>
+            <%= comment.body %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% else %>
+    (<%= t('.no_comments') %>)
+  <% end %>

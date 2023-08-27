@@ -7,6 +7,16 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    models:
+      comment: コメント
+    controllers:
+      common:
+        notice_create: "%{name}が作成されました。"
+      comments:
+        form:
+          create: コメントする
+        comments:
+          no_comments: コメントはまだありません。
   date:
     abbr_day_names:
     - 日
@@ -207,6 +217,7 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+      needs_input: "未入力の項目があるため、登録できません。"
   layouts:
     application:
       menu: メニュー
