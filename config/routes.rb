@@ -7,10 +7,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   devise_scope :user do
     get 'auth/logout' => 'devise/sessions#destroy'
     get 'users/show'
   end
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
