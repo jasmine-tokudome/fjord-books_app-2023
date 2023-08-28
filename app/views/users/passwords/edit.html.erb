@@ -1,24 +1,24 @@
-<h2>パスワードの変更</h2>
+<h2><%= t'.change_password' %></h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
 
   <div class="field">
-    <%= f.label :password, "新しいパスワード" %><br />
+    <%= f.label :password, t('.new_password') %><br />
     <% if @minimum_password_length %>
-      <em>( 最小文字数 <%= @minimum_password_length %> )</em><br />
+      <em><%= ( t('.minimum_password_length', minimum_password_length: @minimum_password_length) ) %> </em><br/>
     <% end %>
     <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "新しいパスワードの確認" %><br />
+    <%= f.label :password_confirmation, t('.confirm_password') %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "パスワードの変更" %>
+    <%= f.submit t'.change_password' %>
   </div>
 <% end %>
 

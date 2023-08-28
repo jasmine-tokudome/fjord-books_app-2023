@@ -200,8 +200,80 @@ ja:
       previous: '‹ 前'
       next: '次 ›'
       truncate: '…'
+
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+
+  layouts:
+    application:
+      login_user: "%{email} でログインしています。"
+      profile: "プロフィール"
+      edit_profile: "プロフィール編集"
+      user_list: "ユーザー一覧"
+      book_list: "本の一覧"
+      logout: "ログアウト"
+      user_registration: "アカウント登録"
+      login: "ログイン"
+  users:
+    passwords:
+       edit:
+          new_password: "新しいパスワード"
+          minimum_password_length: "最小文字数 %{minimum_password_length}"
+          confirm_password: "新しいパスワードの確認"
+          change_password: "パスワードの変更"
+       new:
+          forget: "パスワードをお忘れですか?"
+          email: "Eメール"
+          send: "パスワードのリセット手順を送信してください"
+    registrations:
+       edit:
+          change_profile: "プロフィール変更"
+          email: "Eメール"
+          post_code: "郵便番号"
+          address: "住所"
+          self_introduction: "自己紹介"
+          passwords: "パスワード"
+          no_change: "(変更がなければ空欄のままとしてください。)"
+          minimum_password_length: "最小文字数 %{minimum_password_length}"
+          confirm_password: "パスワード確認"
+          current_password: "現在のパスワード"
+          needs_input: "(変更を認証するため現在のパスワード入力が必要です。)"
+          update: "更新"
+          cancel_account: "アカウントをキャンセルする"
+          request_cancel: "キャンセルをご希望ですか?"
+          cancel_button: "アカウントをキャンセルします。"
+          conform_cancel: "問題ありませんか?"
+          back: "戻る"
+       new:
+          registration: "アカウント登録"
+          minimum_password_length: "最小文字数 %{minimum_password_length}"
+    sessions:
+        new:
+          login: "ログイン"
+          email: "Eメール"
+          passwords: "パスワード"
+    shared:
+       links:
+         login: "ログイン"
+         user_registration: "アカウント登録"
+         forget: "パスワードをお忘れですか?"
+         can_not_receive: "確認手順を受け取れませんか?"
+         can_not_unlock: "ロック解除手順の受け取りができませんか?"
+    unlocks:
+    index:
+      user_list: "ユーザー一覧"
+      id: "ID: %{id}"
+      email: "Eメール: %{email}"
+      post_code: "郵便番号: %{post_code}"
+      address: "住所: %{address}"
+      self_introduction: "自己紹介: %{self_introduction}"
+    show:
+      profile: "プロフィール"
+      id: "ID: %{id}"
+      email: "Eメール: %{email}"
+      post_code: "郵便番号: %{post_code}"
+      address: "住所: %{address}"
+      self_introduction: "自己紹介: %{self_introduction}"

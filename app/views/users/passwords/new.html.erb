@@ -1,15 +1,15 @@
-<h2>パスワードをお忘れですか?</h2>
+<h2><%= t'.forget' %></h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :'Eメール' %><br />
+    <%= f.label (t'.email' )%><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "パスワードのリセット手順を送信してください" %>
+    <%= f.submit t'.send' %>
   </div>
 <% end %>
 
