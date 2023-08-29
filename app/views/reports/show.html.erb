@@ -4,16 +4,16 @@
 
 <div>
   <%# if current_user == @user %>
-  <%= link_to t('.edit'), edit_report_path(@report) %> |
+  <%= link_to "Edit this report", edit_report_path(@report) %> |
     <%# end %>
-  <%= link_to t('.back'), reports_path %>
+  <%= link_to "Back to reports", reports_path %>
 
-  <%= button_to t('.destroy'), @report, method: :delete %>
+  <%= button_to "Destroy this report", @report, method: :delete %>
 
-  <h2><%= t'.add_a_comment' %></h2>
+  <h2>Add a comment:</h2>
   <%= render 'comments/form', commentable: @report, comment: @comment %>
 
-  <h2><%= t'.comments' %></h2>
+  <h2>Comments</h2>
   <%= render 'comments/comment', commentable: @report, comments: @comments %>
 
 </div>
