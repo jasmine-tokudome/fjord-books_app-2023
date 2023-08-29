@@ -4,21 +4,21 @@
       <% comments.each do |comment| %>
         <% if comment.persisted? %>
           <p>
-            <strong>Name:</strong>
+            <strong><%= t'.user_name' %></strong>
             <%= comment.name %>
           </p>
 
           <p>
-            <strong>Comment:</strong>
+            <strong><%= t'.comment' %></strong>
             <%= comment.comment %>
           </p>
 
           <p>
-            <strong>Date:</strong>
+            <strong><%= t'.date' %></strong>
             <%= comment.created_at %>
           </p>
 
-          <%= button_to "Destroy this comment",polymorphic_url([commentable, comment]), method: :delete %>
+          <%= button_to t('.destroy_comment'),polymorphic_url([commentable, comment]), method: :delete %>
 
         <% end %>
       <% end %>

@@ -1,15 +1,13 @@
 <%= form_with model:[commentable, Comment.new] do |form| %>
   <p>
-    <%= form.label :name %><br>
+    <%= form.label t'.user_name' %><br>
     <%= form.text_field :name %>
   </p>
   <p>
-    <%= form.label :comment %><br>
+    <%= form.label t'.comment' %><br>
     <%= form.text_area :comment %>
   </p>
   <p>
     <%= form.submit %>
   </p>
-
-
 <% end %>

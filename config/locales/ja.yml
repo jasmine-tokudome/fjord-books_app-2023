@@ -227,3 +227,44 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
+  books:
+    show:
+      add_a_comment: "コメントをかく"
+      comments: "コメント一覧"
+  comments:
+    comment:
+      user_name: "ユーザー名:"
+      comment: "コメント:"
+      date: "投稿日:"
+      destroy_comment: "このコメントを削除"
+    form:
+      user_name: "ユーザー名"
+      comment: "コメント"
+  reports:
+    form:
+      title: "タイトル"
+      memo: "レポート"
+    report:
+      title: "タイトル"
+      memo: "レポート"
+      date: "投稿日"
+    edit:
+      editing: "レポートの編集"
+    index:
+      reports: "レポート"
+      details: "レポート詳細"
+      new: "レポートを作成"
+    new:
+      new: "レポートの新規作成"
+      reports: "レポート一覧"
+    show:
+      edit: "レポートの編集"
+      back: "レポート一覧に戻る"
+      destroy: "このレポートを削除"
+      add_a_comment: "コメントをかく"
+      comments: "コメント一覧"
+
+
+
+
+

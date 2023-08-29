@@ -4,8 +4,10 @@
   <%= render @book %>
 </div>
 
-<h2>Add a comment:</h2>
+<div>
+<h2><%= t'.add_a_comment' %><h2>
 <%= render 'comments/form', commentable: @book, comment: @comment %>
 
-<h2>Comments</h2>
+<h2><%= t'.comments' %></h2>
 <%= render 'comments/comment', commentable: @book, comments: @comments %>
+</div>
