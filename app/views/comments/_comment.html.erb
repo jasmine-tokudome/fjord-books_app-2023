@@ -4,8 +4,8 @@
       <% comments.each do |comment| %>
         <% if comment.persisted? %>
           <li>
-            <%= comment.commenter %>
-            <%= comment.body %>
+            <%= comment.name %>
+            <%= comment.comment %>
           </li>
         <% end %>
       <% end %>
