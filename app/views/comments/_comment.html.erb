@@ -6,7 +6,7 @@
           <p>
             <strong><%= t'.user_name' %></strong>
             <% if comment.name.nil? %>
-              <%= comment.user.email %>
+              <%= current_user.email %>
               <% else %>
               <%= comment.name %>
             <% end %>
@@ -28,5 +28,5 @@
       <% end %>
     </ul>
   <% else %>
-    (<%= t('.no_comments') %>)
+    <%= t'.no_comments' %>
   <% end %>
