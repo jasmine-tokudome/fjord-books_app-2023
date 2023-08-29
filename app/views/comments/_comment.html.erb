@@ -5,7 +5,11 @@
         <% if comment.persisted? %>
           <p>
             <strong><%= t'.user_name' %></strong>
-            <%= comment.name %>
+            <% if comment.name.nil? %>
+              <%= comment.user.email %>
+              <% else %>
+              <%= comment.name %>
+            <% end %>
           </p>
 
           <p>
