@@ -237,6 +237,7 @@ ja:
       comment: "コメント:"
       date: "投稿日:"
       destroy_comment: "このコメントを削除"
+      no_comments: "まだコメントはありません。"
     form:
       user_name: "ユーザー名"
       comment: "コメント"
@@ -263,8 +264,4 @@ ja:
       destroy: "このレポートを削除"
       add_a_comment: "コメントをかく"
       comments: "コメント一覧"
-
-
-
-
 

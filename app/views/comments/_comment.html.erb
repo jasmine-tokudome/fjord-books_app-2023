@@ -1,32 +1,33 @@
- <strong><%= Comment.model_name.human %>:</strong>
-  <% if comments.any? %>
-    <ul>
-      <% comments.each do |comment| %>
-        <% if comment.persisted? %>
-          <p>
-            <strong><%= t'.user_name' %></strong>
-            <% if comment.name.nil? %>
-              <%= current_user.email %>
-              <% else %>
-              <%= comment.name %>
-            <% end %>
-          </p>
+<strong><%= Comment.model_name.human %></strong>
+<% if comments.any? %>
+  <ul>
+    <% comments.each do |comment| %>
+      <% if comment.persisted? %>
 
-          <p>
-            <strong><%= t'.comment' %></strong>
-            <%= comment.comment %>
-          </p>
-
-          <p>
-            <strong><%= t'.date' %></strong>
-            <%= comment.created_at %>
-          </p>
-
-          <%= button_to t('.destroy_comment'),polymorphic_url([commentable, comment]), method: :delete %>
-
+        <p>
+          <strong><%= t'.user_name' %></strong>
+        <% if comment.name.present? %>
+          <%= comment.name %>
+        <% else %>
+          <%= comment.user.email %>
         <% end %>
+        </p>
+
+        <p>
+          <strong><%= t'.comment' %></strong>
+          <%= comment.comment %>
+        </p>
+
+        <p>
+          <strong><%= t'.date' %></strong>
+          <%= comment.created_at %>
+        </p>
+        <p>
+          <%= button_to t('.destroy_comment'),polymorphic_url([commentable, comment]), method: :delete %>
+        </p>
       <% end %>
-    </ul>
-  <% else %>
-    <%= t'.no_comments' %>
-  <% end %>
+    <% end %>
+  </ul>
+<% else %>
+  (<%= t('.no_comments') %>)
+<% end %>
