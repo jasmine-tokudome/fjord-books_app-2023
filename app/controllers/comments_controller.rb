@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
-      redirect_to @commentable, notice: t('controllers.common.needs_input', name: Comment.model_name.human)
+      redirect_to @commentable, alert: t('controllers.common.needs_input', name: Comment.model_name.human)
     end
   end
 
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
       @comment.destroy
       redirect_to @commentable, notice: 'Comment was successfully destroyed.'
     else
-      redirect_to @commentable, notice: '権限がありません'
+      redirect_to @commentable, alert: '権限がありません'
     end
   end
 
