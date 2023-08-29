@@ -3,10 +3,23 @@
     <ul>
       <% comments.each do |comment| %>
         <% if comment.persisted? %>
-          <li>
+          <p>
+            <strong>Name:</strong>
             <%= comment.name %>
+          </p>
+
+          <p>
+            <strong>Comment:</strong>
             <%= comment.comment %>
-          </li>
+          </p>
+
+          <p>
+            <strong>Date:</strong>
+            <%= comment.created_at %>
+          </p>
+
+          <%= button_to "Destroy this comment",polymorphic_url([commentable, comment]), method: :delete %>
+
         <% end %>
       <% end %>
     </ul>

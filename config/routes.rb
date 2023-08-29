@@ -11,13 +11,4 @@ Rails.application.routes.draw do
   resources :reports do
     resources :comments, only: %i[create destroy edit update], module: :reports
   end
-
-  # resources :books do
-  #   resources :comments,only: [:create, :destroy], defaults: { commentable_type: 'Book' },module: :books
-  # end
-  #
-  # resources :reports do
-  #   resources :comments,only: [:create, :destroy], defaults: { commentable_type: 'Report' },module: :reports
-  # end
-
 end
