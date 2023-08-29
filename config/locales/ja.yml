@@ -218,6 +218,7 @@ ja:
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
       needs_input: "未入力の項目があるため、登録できません。"
+      user_only: "権限がありません"
   layouts:
     application:
       menu: メニュー

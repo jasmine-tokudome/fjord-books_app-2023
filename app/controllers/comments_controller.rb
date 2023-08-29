@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.build(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
+      redirect_to @commentable, alert: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
       redirect_to @commentable, alert: t('controllers.common.needs_input', name: Comment.model_name.human)
     end
@@ -17,9 +17,9 @@ class CommentsController < ApplicationController
   def destroy
     if @comment.user == current_user
       @comment.destroy
-      redirect_to @commentable, notice: 'Comment was successfully destroyed.'
+      redirect_to @commentable, alert: t('controllers.common.notice_destroy', name: Comment.model_name.human)
     else
-      redirect_to @commentable, alert: '権限がありません'
+      redirect_to @commentable, alert: t('controllers.common.user_only', name: Comment.model_name.human)
     end
   end
 
