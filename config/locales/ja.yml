@@ -252,6 +252,8 @@ ja:
       date: "投稿日"
     edit:
       editing: "レポートの編集"
+      show_this_report: "このレポートをみる"
+      back_to_reports: "レポート一覧に戻る"
     index:
       reports: "レポート"
       details: "レポート詳細"
