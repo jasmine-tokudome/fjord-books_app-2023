@@ -229,7 +229,7 @@ ja:
         title: "アカウント編集"
   books:
     show:
-      add_a_comment: "コメントをかく"
+      add_a_comment: "コメントする"
       comments: "コメント一覧"
   comments:
     comment:
@@ -262,6 +262,6 @@ ja:
       edit: "レポートの編集"
       back: "レポート一覧に戻る"
       destroy: "このレポートを削除"
-      add_a_comment: "コメントをかく"
+      add_a_comment: "コメントする"
       comments: "コメント一覧"
 
