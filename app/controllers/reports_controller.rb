@@ -12,7 +12,6 @@ class ReportsController < ApplicationController
 
   # GET /reports/1 or /reports/1.json
   def show
-    # binding.irb
     @report = Report.find(params[:id])
     @comment = Comment.new
     @comments = @report.comments

@@ -1,11 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @report %>
 
 <div>
-  <%# if current_user == @user %>
+
   <%= link_to t('.edit'), edit_report_path(@report) %> |
-    <%# end %>
+
   <%= link_to t('.back'), reports_path %>
 
   <%= button_to t('.destroy'), @report, method: :delete %>
