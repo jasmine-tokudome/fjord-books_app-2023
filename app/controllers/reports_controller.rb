@@ -22,6 +22,8 @@ class ReportsController < ApplicationController
     @report = current_user.reports.new(report_params)
 
     if @report.save
+      mentioned_report = Report.find(params[:mentioned_report_id])
+
       redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
     else
       render :new, status: :unprocessable_entity

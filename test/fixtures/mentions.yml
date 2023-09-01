@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mentioning: MyString
+  mentioned: MyString
+
+two:
+  mentioning: MyString
+  mentioned: MyString
