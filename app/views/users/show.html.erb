@@ -1,0 +1,9 @@
+<h1> <%= t'.profile' %></h1>
+
+<div class="user_details">
+<%= t('.id', id: current_user.id) %><br>
+<%= t('.email', email: current_user.email) %><br>
+<%= t('.post_code', post_code: current_user.post_code) %><br>
+<%= t('.address',address: current_user.address) %><br>
+<%= t('.self_introduction',self_introduction: current_user.self_introduction) %><br>
+</div>

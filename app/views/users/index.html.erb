@@ -1,0 +1,18 @@
+<% provide(:title, 'All users') %>
+<h1><%= t'.user_list' %></h1>
+
+<div class="users_index">
+  <% @users.each do |user| %>
+<table>
+    <tr><%= t('.id', id: user.id) %></tr><br>
+    <tr><%= t('.email', email: user.email) %></tr><br>
+    <tr><%= t('.post_code',post_code: user.post_code) %></tr><br>
+    <tr><%= t('.address',address: user.address) %></tr><br>
+    <tr><%= t('.self_introduction',self_introduction:user.self_introduction) %></tr><br><br>
+</table>
+  <% end %>
+</div>
+
+<div>
+  <%= paginate @users %>
+</div>
