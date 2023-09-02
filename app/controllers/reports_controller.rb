@@ -22,8 +22,14 @@ class ReportsController < ApplicationController
     @report = current_user.reports.new(report_params)
 
     if @report.save
-      mentioned_report = Report.find(params[:mentioned_report_id])
-
+      binding.irb
+      extract_urls = params[:report][:content].scan(/\/localhost\:3000\/reports\/(\d+)/)
+      if extract_urls .any?
+        extract_urls.map do |extract_url|
+          { mentioning_id: extract_url, mentioned_id: @report_id }
+        end
+        Mention.new
+      end
       redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
     else
       render :new, status: :unprocessable_entity
