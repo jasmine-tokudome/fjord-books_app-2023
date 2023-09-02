@@ -1,0 +1,17 @@
+<h1>Add User</h1>
+
+<%= form_with model: @user, local: true do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
