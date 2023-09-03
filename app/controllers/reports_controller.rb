@@ -51,8 +51,10 @@ class ReportsController < ApplicationController
   end
 
   def destroy
-    report_id = @report.id
-    Mention.find_by(mentioned_report_id: report_id).destroy
+    matching_mentioning = Mention.where(mentioning_report_id: @report.id)
+    Mention.destroy(matching_mentioning.ids)
+    matching_mentioned = Mention.where(mentioned_report_id: @report.id)
+    Mention.destroy(matching_mentioned.ids)
     @report.destroy
 
     redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
