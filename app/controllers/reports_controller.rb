@@ -22,13 +22,11 @@ class ReportsController < ApplicationController
     @report = current_user.reports.new(report_params)
 
     if @report.save
-      binding.irb
-      extract_urls = params[:report][:content].scan(/\/localhost\:3000\/reports\/(\d+)/)
-      if extract_urls .any?
-        extract_urls.map do |extract_url|
-          { mentioning_id: extract_url, mentioned_id: @report_id }
+      extract_urls = params[:report][:content].scan(/http:\/\/localhost\:3000\/reports\/(\d+)/).uniq.flatten
+      if extract_urls.any?
+        extract_urls.each do |extract_url|
+          Mention.create(mentioning_report_id: @report.id, mentioned_report_id: extract_url)
         end
-        Mention.new
       end
       redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
     else
