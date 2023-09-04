@@ -1,10 +1,11 @@
-<% mentionings_to_this_report = Mention.where(mentioning_report_id: report.id) %>
-<% report_ids = mentionings_to_this_report.map(&:mentioned_report_id) %>
+<% mentionings_to_this_report = Mention.where(mentioned_report_id: report.id) %>
+<% report_ids = mentionings_to_this_report.map(&:mentioning_report_id) %>
 <% if report_ids.any? %>
   <ul>
     <%= t('.linked') %><br><br>
     <% report_ids.each do |id| %>
       <% report= Report.find_by(id: id) %>
+
       <%= link_to "#{report.title}","http://localhost:3000/reports/#{id}" %><br><br>
     <% end %>
   </ul>
