@@ -20,19 +20,8 @@ class ReportsController < ApplicationController
 
   def create
     @report = current_user.reports.new(report_params)
-    # find_or_initialize_by
-    # find_or_create_by
 
     if @report.save
-      report.mentioning!(report_params[:content])
-      # or
-      Mention.mentioning!(report_params[:content])
-      extract_urls = params[:report][:content].scan(/http:\/\/localhost\:3000\/reports\/([^0]\d+)/).uniq.flatten
-      if extract_urls.any?
-        extract_urls.each do |extract_url|
-          Mention.create(mentioning_report_id: @report.id, mentioned_report_id: extract_url)
-        end
-      end
       redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
     else
       render :new, status: :unprocessable_entity
@@ -41,14 +30,6 @@ class ReportsController < ApplicationController
 
   def update
     if @report.update(report_params)
-      matching_mentions = Mention.where(mentioning_report_id: @report.id)
-      Mention.destroy(matching_mentions.ids)
-      extract_urls = params[:report][:content].scan(/http:\/\/localhost\:3000\/reports\/([^0]\d+)/).uniq.flatten
-      if extract_urls.any?
-        extract_urls.each do |extract_url|
-          Mention.create(mentioning_report_id: @report.id, mentioned_report_id: extract_url)
-        end
-      end
       redirect_to @report, notice: t('controllers.common.notice_update', name: Report.model_name.human)
     else
       render :edit, status: :unprocessable_entity
@@ -56,10 +37,6 @@ class ReportsController < ApplicationController
   end
 
   def destroy
-    matching_mentioning = Mention.where(mentioning_report_id: @report.id)
-    Mention.destroy(matching_mentioning.ids)
-    matching_mentioned = Mention.where(mentioned_report_id: @report.id)
-    Mention.destroy(matching_mentioned.ids)
     @report.destroy
 
     redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
