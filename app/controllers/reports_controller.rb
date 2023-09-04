@@ -20,9 +20,14 @@ class ReportsController < ApplicationController
 
   def create
     @report = current_user.reports.new(report_params)
+    # find_or_initialize_by
+    # find_or_create_by
 
     if @report.save
-      extract_urls = params[:report][:content].scan(/http:\/\/localhost\:3000\/reports\/(\d+)/).uniq.flatten
+      report.mentioning!(report_params[:content])
+      # or
+      Mention.mentioning!(report_params[:content])
+      extract_urls = params[:report][:content].scan(/http:\/\/localhost\:3000\/reports\/([^0]\d+)/).uniq.flatten
       if extract_urls.any?
         extract_urls.each do |extract_url|
           Mention.create(mentioning_report_id: @report.id, mentioned_report_id: extract_url)
@@ -38,7 +43,7 @@ class ReportsController < ApplicationController
     if @report.update(report_params)
       matching_mentions = Mention.where(mentioning_report_id: @report.id)
       Mention.destroy(matching_mentions.ids)
-      extract_urls = params[:report][:content].scan(/http:\/\/localhost\:3000\/reports\/(\d+)/).uniq.flatten
+      extract_urls = params[:report][:content].scan(/http:\/\/localhost\:3000\/reports\/([^0]\d+)/).uniq.flatten
       if extract_urls.any?
         extract_urls.each do |extract_url|
           Mention.create(mentioning_report_id: @report.id, mentioned_report_id: extract_url)
