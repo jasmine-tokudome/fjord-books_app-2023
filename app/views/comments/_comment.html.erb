@@ -4,27 +4,27 @@
   <ul>
     <% comments.each do |comment| %>
 
-        <p>
-          <strong><%= t '.user_name' %></strong>
-          <% if comment.user.name.present? %>
-            <%= comment.user.name %>
-          <% else %>
-            <%= comment.user.email %>
-          <% end %>
-        </p>
+      <p>
+        <strong><%= t '.user_name' %></strong>
+        <% if comment.user.name.present? %>
+          <%= comment.user.name %>
+        <% else %>
+          <%= comment.user.email %>
+        <% end %>
+      </p>
 
-        <p>
-          <strong><%= t '.comment' %></strong>
-          <%= comment.comment %>
-        </p>
+      <p>
+        <strong><%= t '.comment' %></strong>
+        <%= comment.comment %>
+      </p>
 
-        <p>
-          <strong><%= t '.date' %></strong>
-          <%= l comment.created_at %>
-        </p>
-        <p>
-          <%= button_to t('views.common.destroy', name: Comment.model_name.human), polymorphic_url([commentable, comment]), method: :delete %>
-        </p>
+      <p>
+        <strong><%= t '.date' %></strong>
+        <%= l comment.created_at %>
+      </p>
+      <p>
+        <%= button_to t('views.common.destroy', name: Comment.model_name.human), polymorphic_url([commentable, comment]), method: :delete %>
+      </p>
     <% end %>
   </ul>
 <% else %>
