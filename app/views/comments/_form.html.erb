@@ -1,10 +1,6 @@
 <%= form_with model:[commentable, Comment.new] do |form| %>
   <p>
-    <%= form.label t'.user_name' %><br>
-    <%= form.text_field :name %>
-  </p>
-  <p>
-    <%= form.label t'.comment' %><br>
+    <%= form.label t('.comment') %><br>
     <%= form.text_area :comment %>
   </p>
   <p>

@@ -6,8 +6,8 @@
 
         <p>
           <strong><%= t '.user_name' %></strong>
-          <% if comment.name.present? %>
-            <%= comment.name %>
+          <% if comment.user.name.present? %>
+            <%= comment.user.name %>
           <% else %>
             <%= comment.user.email %>
           <% end %>
