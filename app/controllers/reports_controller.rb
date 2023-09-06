@@ -74,9 +74,6 @@ class ReportsController < ApplicationController
   end
 
   def confirm_the_owner
-    return if @report.user == current_user
-
-    flash[:alert] = t('controllers.common.user_only', name: Comment.model_name.human)
-    redirect_to @report
+    current_user.reports.find(params[:id])
   end
 end
