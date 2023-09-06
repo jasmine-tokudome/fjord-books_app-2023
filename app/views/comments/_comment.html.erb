@@ -20,7 +20,7 @@
 
         <p>
           <strong><%= t '.date' %></strong>
-          <%= comment.created_at %>
+          <%= l comment.created_at %>
         </p>
         <p>
           <%= button_to t('.destroy_comment'), polymorphic_url([commentable, comment]), method: :delete %>
