@@ -1,6 +1,6 @@
 <%= render @report %>
 
-<div>
+<nav class="page-nav">
 
   <%= link_to t('views.common.title_edit', name: Report.model_name.human), edit_report_path(@report) %> |
 
@@ -8,8 +8,8 @@
 
   <%= button_to t('views.common.destroy', name: Report.model_name.human), @report, method: :delete %>
 
+</nav>
+
   <%= render 'comments/form', commentable: @report, comment: @comment %>
 
   <%= render 'comments/comment', commentable: @report, comments: @comments %>
-
-</div>
