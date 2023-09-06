@@ -3,7 +3,7 @@
 class ReportsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :set_report, only: %i[show edit update destroy]
-  before_action :check_owner, only: %i[edit update destroy]
+  before_action :confirm_the_owner, only: %i[edit update destroy]
 
   # GET /reports or /reports.json
   def index
@@ -73,7 +73,7 @@ class ReportsController < ApplicationController
     params.require(:report).permit(:title, :memo)
   end
 
-  def check_owner
+  def confirm_the_owner
     return if @report.user == current_user
 
     flash[:alert] = t('controllers.common.user_only', name: Comment.model_name.human)
