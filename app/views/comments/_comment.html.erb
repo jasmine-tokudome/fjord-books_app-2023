@@ -1,5 +1,5 @@
 <strong><%= Comment.model_name.human %></strong>
-<% comments = @book.comments %>
+<% comments = commentable.comments %>
 <% if comments.any? %>
   <ul>
     <% comments.each do |comment| %>
