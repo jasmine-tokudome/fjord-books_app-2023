@@ -9,6 +9,7 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       comment: コメント
+      report: レポート
     controllers:
       common:
         notice_create: "%{name}が作成されました。"
@@ -228,20 +229,12 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
-  books:
-    show:
-      add_a_comment: "コメントする"
-      comments: "コメント一覧"
   comments:
     comment:
       user_name: "ユーザー名:"
       comment: "コメント:"
       date: "投稿日:"
-      destroy_comment: "このコメントを削除"
       no_comments: "まだコメントはありません。"
-    form:
-      user_name: "ユーザー名"
-      comment: "コメント"
   reports:
     form:
       title: "タイトル"
@@ -250,21 +243,3 @@ ja:
       title: "タイトル"
       memo: "レポート"
       date: "投稿日"
-    edit:
-      editing: "レポートの編集"
-      show_this_report: "このレポートをみる"
-      back_to_reports: "レポート一覧に戻る"
-    index:
-      reports: "レポート"
-      details: "レポート詳細"
-      new: "レポートを作成"
-    new:
-      new: "レポートの新規作成"
-      reports: "レポート一覧"
-    show:
-      edit: "レポートの編集"
-      back: "レポート一覧に戻る"
-      destroy: "このレポートを削除"
-      add_a_comment: "コメントする"
-      comments: "コメント一覧"
-

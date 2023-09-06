@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1><%= t'.reports' %></h1>
+<h1><%= t('views.common.title_index', name: Report.model_name.human) %></h1>
 
 <div id="reports">
   <% @reports.each do |report| %>
     <%= render report %>
     <p>
-      <%= link_to t('.details'), report %>
+      <%= link_to t('views.common.title_show', name: Report.model_name.human), report %>
     </p>
   <% end %>
 </div>
 
-<%= link_to t('.new'), new_report_path %>
+<%= link_to t('views.common.new', name: Report.model_name.human), new_report_path %>

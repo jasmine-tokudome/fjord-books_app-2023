@@ -1,4 +1,4 @@
-<strong><%= Comment.model_name.human %></strong>
+<h2><%= t('views.common.title_index', name: Comment.model_name.human) %></h2>
 <% comments = commentable.comments %>
 <% if comments.any? %>
   <ul>
@@ -23,7 +23,7 @@
           <%= l comment.created_at %>
         </p>
         <p>
-          <%= button_to t('.destroy_comment'), polymorphic_url([commentable, comment]), method: :delete %>
+          <%= button_to t('views.common.destroy', name: Comment.model_name.human), polymorphic_url([commentable, comment]), method: :delete %>
         </p>
     <% end %>
   </ul>

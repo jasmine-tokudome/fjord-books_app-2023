@@ -2,16 +2,14 @@
 
 <div>
 
-  <%= link_to t('.edit'), edit_report_path(@report) %> |
+  <%= link_to t('views.common.title_edit', name: Report.model_name.human), edit_report_path(@report) %> |
 
-  <%= link_to t('.back'), reports_path %>
+  <%= link_to t('views.common.back', name: Report.model_name.human), reports_path %>
 
-  <%= button_to t('.destroy'), @report, method: :delete %>
+  <%= button_to t('views.common.destroy', name: Report.model_name.human), @report, method: :delete %>
 
-  <h2><%= t'.add_a_comment' %></h2>
   <%= render 'comments/form', commentable: @report, comment: @comment %>
 
-  <h2><%= t'.comments' %></h2>
   <%= render 'comments/comment', commentable: @report, comments: @comments %>
 
 </div>
