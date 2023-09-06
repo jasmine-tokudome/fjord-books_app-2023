@@ -10,14 +10,6 @@ ja:
     models:
       comment: コメント
       report: レポート
-    controllers:
-      common:
-        notice_create: "%{name}が作成されました。"
-      comments:
-        form:
-          create: コメントする
-        comments:
-          no_comments: コメントはまだありません。
   date:
     abbr_day_names:
     - 日
@@ -234,7 +226,7 @@ ja:
       user_name: "ユーザー名:"
       comment: "コメント:"
       date: "投稿日:"
-      no_comments: "まだコメントはありません。"
+      no_comments: "コメントはありません。"
   reports:
     form:
       title: "タイトル"
