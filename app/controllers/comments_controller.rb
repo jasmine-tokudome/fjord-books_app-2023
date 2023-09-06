@@ -2,7 +2,6 @@
 
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_comment, only: %i[destroy]
 
   def create
     @comment = @commentable.comments.build(comment_params)
@@ -15,6 +14,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
     if @comment.user == current_user
       @comment.destroy
       redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
@@ -27,9 +27,5 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:name, :comment)
-  end
-
-  def set_comment
-    @comment = Comment.find(params[:id])
   end
 end
