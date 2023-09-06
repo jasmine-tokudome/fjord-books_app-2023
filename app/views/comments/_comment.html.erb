@@ -3,7 +3,7 @@
 <% if comments.any? %>
   <ul>
     <% comments.each do |comment| %>
-      <% if comment.persisted? %>
+
         <p>
           <strong><%= t '.user_name' %></strong>
           <% if comment.name.present? %>
@@ -25,7 +25,6 @@
         <p>
           <%= button_to t('.destroy_comment'), polymorphic_url([commentable, comment]), method: :delete %>
         </p>
-      <% end %>
     <% end %>
   </ul>
 <% else %>
