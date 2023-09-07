@@ -10,6 +10,10 @@ ja:
     models:
       comment: コメント
       report: レポート
+    attributes:
+      comment:
+        content: "コメント"
+        created_at: "投稿日"
   date:
     abbr_day_names:
       - 日
@@ -224,8 +228,6 @@ ja:
   comments:
     comment:
       user_name: "ユーザー名:"
-      comment: "コメント:"
-      date: "投稿日:"
       no_comments: "コメントはありません。"
   reports:
     form:

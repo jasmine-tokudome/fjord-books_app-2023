@@ -10,12 +10,12 @@
       </p>
 
       <p>
-        <strong><%= t '.content' %></strong>
+        <strong><%= Comment.human_attribute_name("content") %></strong>
         <%= comment.content %>
       </p>
 
       <p>
-        <strong><%= t '.date' %></strong>
+        <strong><%= Comment.human_attribute_name("created_at") %></strong>
         <%= l comment.created_at %>
       </p>
       <p>
