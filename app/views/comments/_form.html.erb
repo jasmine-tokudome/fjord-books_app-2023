@@ -1,7 +1,7 @@
 <h2><%= t('views.common.new', name: Comment.model_name.human) %></h2>
 <%= form_with model: [commentable, Comment.new] do |form| %>
   <p>
-    <%= form.text_area :comment %>
+    <%= form.text_area :content %>
   </p>
   <p>
     <%= form.submit %>

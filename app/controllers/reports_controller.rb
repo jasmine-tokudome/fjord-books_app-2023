@@ -2,8 +2,7 @@
 
 class ReportsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
-  before_action :set_report, only: %i[show edit update destroy]
-  before_action :confirm_the_owner, only: %i[edit update destroy]
+  before_action :set_report, only: %i[edit update destroy]
 
   # GET /reports or /reports.json
   def index
@@ -42,7 +41,7 @@ class ReportsController < ApplicationController
   def update
     respond_to do |format|
       if @report.update(report_params)
-        format.html { redirect_to report_url(@book), notice: t('controllers.common.notice_update', name: Report.model_name.human) }
+        format.html { redirect_to report_url(@report), notice: t('controllers.common.notice_update', name: Report.model_name.human) }
         format.json { render :show, status: :ok, location: @report }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,15 +64,11 @@ class ReportsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_report
-    @report = Report.find(params[:id])
+    @report = current_user.reports.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
   def report_params
     params.require(:report).permit(:title, :memo)
-  end
-
-  def confirm_the_owner
-    current_user.reports.find(params[:id])
   end
 end
