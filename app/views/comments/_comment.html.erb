@@ -19,7 +19,7 @@
         <%= l comment.created_at %>
       </p>
       <p>
-        <%= button_to t('views.common.destroy', name: Comment.model_name.human), polymorphic_url([commentable, comment]), method: :delete %>
+        <%= button_to t('views.common.destroy', name: Comment.model_name.human), [commentable, comment], method: :delete %>
       </p>
     <% end %>
   </ul>
