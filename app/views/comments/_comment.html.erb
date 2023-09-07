@@ -1,5 +1,5 @@
 <h2><%= t('views.common.title_index', name: Comment.model_name.human) %></h2>
-<% comments = commentable.comments %>
+<% comments = commentable.comments.order(:id) %>
 <% if comments.any? %>
 
     <% comments.each do |comment| %>
