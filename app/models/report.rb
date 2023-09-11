@@ -21,7 +21,6 @@ class Report < ApplicationRecord
   end
 
   after_destroy do
-    # binding.irb
     matching_mentioning = Mention.where(mentioning_report: self)
     Mention.destroy(matching_mentioning.ids)
     matching_mentioned = Mention.where(mentioned_report: self)
