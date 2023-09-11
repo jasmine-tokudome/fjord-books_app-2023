@@ -9,14 +9,16 @@ class Report < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
 
-  after_save do
+  after_save :update_mentionings
+
+  def update_mentionings
     matching_mentions = Mention.where(mentioning_report: self)
     matching_mentions.destroy_all
     extract_urls = self[:content].scan(%r{http://localhost:3000/reports/([^0]\d+)}).uniq.flatten
-    if extract_urls.any?
-      extract_urls.each do |extract_url|
-        mentioning.create(mentioned_report_id: extract_url)
-      end
+    return unless extract_urls.any?
+
+    extract_urls.each do |extract_url|
+      mentioning.create(mentioned_report_id: extract_url)
     end
   end
 
