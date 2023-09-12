@@ -22,13 +22,6 @@ class Report < ApplicationRecord
     end
   end
 
-  after_destroy do
-    matching_mentioning = Mention.where(mentioning_report: self)
-    Mention.destroy(matching_mentioning.ids)
-    matching_mentioned = Mention.where(mentioned_report: self)
-    Mention.destroy(matching_mentioned.ids)
-  end
-
   def editable?(target_user)
     user == target_user
   end
