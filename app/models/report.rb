@@ -3,9 +3,24 @@
 class Report < ApplicationRecord
   belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
+  has_many :mentioning, class_name: 'Mention', foreign_key: :mentioning_report_id, dependent: :destroy, inverse_of: :mentioning_report
+  has_many :mentioned, class_name: 'Mention', foreign_key: :mentioned_report_id, dependent: :destroy, inverse_of: :mentioned_report
 
   validates :title, presence: true
   validates :content, presence: true
+
+  after_save :update_mentionings
+
+  def update_mentionings
+    matching_mentions = Mention.where(mentioning_report: self)
+    matching_mentions.destroy_all
+    extract_urls = self[:content].scan(%r{http://localhost:3000/reports/([^0]\d+)}).uniq.flatten
+    return unless extract_urls.any?
+
+    extract_urls.each do |extract_url|
+      mentioning.create(mentioned_report_id: extract_url)
+    end
+  end
 
   def editable?(target_user)
     user == target_user
