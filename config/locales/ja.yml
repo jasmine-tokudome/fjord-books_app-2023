@@ -7,6 +7,13 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    models:
+      comment: コメント
+      report: レポート
+    attributes:
+      comment:
+        content: "コメント"
+        created_at: "投稿日"
   date:
     abbr_day_names:
     - 日
@@ -177,7 +184,7 @@ ja:
   time:
     am: 午前
     formats:
-      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      default: "%Y/%m/%d %H:%M:%S"
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
@@ -207,6 +214,8 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+      needs_input: "未入力の項目があるため、登録できません。"
+      user_only: "権限がありません"
   layouts:
     application:
       menu: メニュー
@@ -216,3 +225,15 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
+  comments:
+    comment:
+      user_name: "ユーザー名:"
+      no_comments: "コメントはありません。"
+  reports:
+    form:
+      title: "タイトル"
+      memo: "レポート"
+    report:
+      title: "タイトル"
+      memo: "レポート"
+      date: "投稿日"
